@@ -1,36 +1,13 @@
 properties([
-    parameters [  //Testing removed '('
+    parameters ([
         string(name: 'StopEC2', defaultValue:'',description: 'Enter the instance id to stop12'),
         choice(name: 'Deployment Target', choices: ['TB-AWS-SS-Dev'], description: 'Choose deployment environment?'),
         string(name: 'Change Number', defaultValue: '', description: 'Enter a ServiceNow Change Number if appropriate'),
         string(name: 'AMI id', defaultValue: '', description: 'Enter the id of the AMI that you wish to start'),
         string(name: 'Keypair', defaultValue: '', description: 'Enter the name of the keypair to use for the instance'),
-//        choice(name: 'subnetstack', choiceType: 'PT_RADIO', choices: ['subnet-00f3469054725588e', 'subnet-0b543bc371221eb24' , 'subnet-072b81ff6f0f409d0'], description: 'Choose "subnet-07c3db60" to move into AZ-A and "subnet-74a9463c"  to move into AZ-B, where instance to deploy'),
-// Testing start
-        [$class: 'ChoiceParameter', 
-            choiceType: 'PT_RADIO',
-            description: 'Select a cluster',
-            filterLength: 1,
-            filterable: true,
-            name: 'subnetstack',
-            script: [$class: 'GroovyScript',
-                fallbackScript: [
-                    classpath: [], 
-                    sandbox: true, 
-                    script: 'return ["ERROR"]'
-                ],
-                script: [
-                    classpath: [], 
-                    sandbox: true, 
-                    script: 
-       "return['PROD','DEV', 'QA']"
-                ] ,
-        
-
-      
-     //Testing end   
+        choice(name: 'subnetstack', choiceType: 'PT_RADIO', choices: ['subnet-00f3469054725588e', 'subnet-0b543bc371221eb24' , 'subnet-072b81ff6f0f409d0'], description: 'Choose "subnet-07c3db60" to move into AZ-A and "subnet-74a9463c"  to move into AZ-B, where instance to deploy'),
          
-    ], // testing added ' ,'  and removed ' ) '
+    ])
 ])
 
 
