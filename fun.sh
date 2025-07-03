@@ -1,0 +1,4 @@
+#!/bin/bash
+aws ec2 run-instances --image-id $1 --count 1 --instance-type $INSTANCE_TYPE --key-name $2 --security-group-ids $SG_IN $SG_OUT --subnet-id $3 --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=satellitedev}, {Key=Owner,Value=05_TB_Linux_AIX_TEAM@TescoBank.onmicrosoft.com},{Key=CostCentre,Value=55600},{Key=ProjectName,Value=satellitedev},{Key=ProjectCode,Value=304045},{Key=DataClassification,Value=Confidential},{Key=OS,Value=RHEL},{Key=Function,Value=Master6 Server},{Key=CeBackupConfig,Value="02--retention 7,1,1 --quiesce"}]' 'ResourceType=volume,Tags=[{Key=Name,Value=satellitedev},
+{Key=Owner,Value=05_TB_TEAM@Bank.onmicrosoft.com},{Key=CostCentre,Value=55600},{Key=ProjectName,Value=satellitedev},{Key=ProjectCode,Value=304045},{Key=DataClassification,Value=Confidential},{Key=OS,Value=RHEL},
+{Key=Function,Value=Master Satellite 6 Server},{Key=CeBackupConfig,Value="02 --retention 7,1,1 --quiesce"}]'
