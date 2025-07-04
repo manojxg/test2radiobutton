@@ -1,6 +1,6 @@
 properties([
     parameters ([
-        string(name: 'StopEC2', defaultValue:'',description: 'Enter the instance id to stop12'),
+        string(name: 'StopEC2', defaultValue:'',description: 'Enter the instance id to stop12try'),
         choice(name: 'Deployment Target', choices: ['TB-AWS-SS-Dev'], description: 'Choose deployment environment?'),
         string(name: 'Change Number', defaultValue: '', description: 'Enter a ServiceNow Change Number if appropriate'),
         string(name: 'AMI id', defaultValue: '', description: 'Enter the id of the AMI that you wish to start'),
