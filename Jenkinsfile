@@ -20,8 +20,8 @@ properties([
             echo 'Deploying to Staging'
           }
         }
- 
-        
+      }
+    }   
     ])
 ])
 
