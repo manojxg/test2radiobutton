@@ -14,7 +14,7 @@ stages {
         script {
           if (params.subnetstack == 'Dev') {
             echo 'Deploying to Development Environment'
-          } else if (params.ENV == 'Test') {
+          } else if (params.subnetstack == 'Test') {
             echo 'Deploying to Testing Environment'
           } else {
             echo 'Deploying to Staging Environment'
