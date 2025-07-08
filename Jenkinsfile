@@ -7,7 +7,7 @@ properties([
         string(name: 'Keypair', defaultValue: '', description: 'Enter the name of the keypair to use for the instance'),
   // choice(name: 'subnetstack', choiceType: 'PT_RADIO', choices: ['subnet-00f3469054725588e', 'subnet-0b543bc371221eb24' , 'subnet-072b81ff6f0f409d0'], description: 'Choose "subnet-07c3db60" to move into AZ-A and "subnet-74a9463c"  to move into AZ-B, where instance to deploy'),
  //       choice(name: 'DeployTo', description: 'Select the environment to deploy to', type: 'PT_RADIO', value: 'Dev,Test,Stage', visibleItemCount: 5),
-         choice(name: 'ENV', choices: ['Dev', 'Test', 'Stage'], description: 'Choose environment'),
+         choice(name: 'subnetstack', choices: ['Dev', 'Test', 'Stage'], description: 'Choose environment'),
     ])
 ])
 
