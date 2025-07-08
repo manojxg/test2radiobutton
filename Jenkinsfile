@@ -23,7 +23,7 @@ pipeline {
     stage('Deploy') {
       steps {
         script {
-          if (params.ENV == 'Dev') {
+          if (params.subnetstack == 'Dev') {
             echo 'Deploying to Development Environment'
           } else if (params.ENV == 'Test') {
             echo 'Deploying to Testing Environment'
