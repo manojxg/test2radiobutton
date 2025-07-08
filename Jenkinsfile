@@ -18,6 +18,22 @@ pipeline {
     	ansiColor('xterm') // Enables Colour output (useful for things like Ansible)
         
        }
+
+ stages {
+    stage('Deploy') {
+      steps {
+        script {
+          if (params.ENV == 'Dev') {
+            echo 'Deploying to Development Environment'
+          } else if (params.ENV == 'Test') {
+            echo 'Deploying to Testing Environment'
+          } else {
+            echo 'Deploying to Staging Environment'
+          }
+        }
+      }
+    }
+  }
     
     
 
