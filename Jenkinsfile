@@ -24,8 +24,8 @@ pipeline {
         stage('Pre-Reqs') {
             steps {
                 script{
-                    account_id = utils.get_account_id(params['Deployment Target'])
-                    withEnv(aws_session.get(account_id, params['Change Number'])) {
+                 //   account_id = utils.get_account_id(params['Deployment Target'])
+                  //  withEnv(aws_session.get(account_id, params['Change Number'])) {
                         // here you are in the appropriate account
                         echo "inside withEnv"
                         venv.exec('aws configure set region eu-west-1')
@@ -40,10 +40,10 @@ pipeline {
        stage('Do something fun') {
             steps {
                 script{
-                    account_id = utils.get_account_id(params['Deployment Target'])
-                    withEnv(aws_session.get(account_id, params['Change Number'])) {
+               //     account_id = utils.get_account_id(params['Deployment Target'])
+               //     withEnv(aws_session.get(account_id, params['Change Number'])) {
                   //  withEnv(aws_session.get(account_id, params['Change Number'], "arn:aws:iam::${account_id}:role/tb-ss-jenkins-deployment-common") ){
-                         target = params['Deployment Target']
+                        target = params['Deployment Target']
                        
                     
                        
