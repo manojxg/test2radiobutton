@@ -1,10 +1,10 @@
 properties([
     parameters ([
-        string(name: 'StopEC2', defaultValue:'',description: 'Enter the instance id to stop12try2'),
+       
         choice(name: 'Deployment Target', choices: ['TB-AWS-SS-Dev'], description: 'Choose deployment environment?'),
         string(name: 'Change Number', defaultValue: '', description: 'Enter a ServiceNow Change Number if appropriate'),
-        string(name: 'AMI id', defaultValue: '', description: 'Enter the id of the AMI that you wish to start'),
-        string(name: 'Keypair', defaultValue: '', description: 'Enter the name of the keypair to use for the instance'),
+        string(name: 'AMI id', defaultValue: '', description: 'Enter the id of the AMI that you wish to start')
+        
 
     ])
 ])
@@ -43,11 +43,10 @@ pipeline {
                     account_id = utils.get_account_id(params['Deployment Target'])
                     // withEnv(aws_session.get(account_id, params['Change Number'])) {
                     withEnv(aws_session.get(account_id, params['Change Number'], "arn:aws:iam::${account_id}:role/tb-ss-jenkins-deployment-common") ){
-                        stopec2instanceid = params['StopEC2']
-                        target = params['Deployment Target']
-                        amiid = params['AMI id']
-                        keypair = params['Keypair']
-                        subnetazA = params['subnetstack']
+                         target = params['Deployment Target']
+                       
+                    
+                       
                         // here you are in the appropriate account, test a basic command
                         venv.exec('aws s3 ls')
                         // do something useful
