@@ -2,8 +2,8 @@ properties([
     parameters ([
        
         choice(name: 'Deployment Target', choices: ['TB-AWS-SS-Dev'], description: 'Choose deployment environment?'),
-        string(name: 'Change Number', defaultValue: '', description: 'Enter a ServiceNow Change Number if appropriate'),
-        string(name: 'AMI id', defaultValue: '', description: 'Enter the id of the AMI that you wish to start')
+        string(name: 'Change Number', defaultValue: '', description: 'Enter a ServiceNow Change Number if appropriate')
+       
         
 
     ])
@@ -50,9 +50,8 @@ pipeline {
                         // here you are in the appropriate account, test a basic command
                         venv.exec('aws s3 ls')
                         // do something useful
-                        venv.exec("source environment/${target}.sh && env && pwd && ls -la && chmod +x ./fun.sh && chmod +x stopec2.sh")
-                        venv.exec("source environment/${target}.sh && ./stopec2.sh ${stopec2instanceid}")
-                        venv.exec("source environment/${target}.sh && ./fun.sh ${amiid} ${keypair} ${subnetazA}")
+                        venv.exec("source environment/${target}.sh && env && pwd && ls -la && chmod +x ./fun.sh")
+                       venv.exec("source environment/${target}.sh && ./fun.sh")
                     }
                 }
             }
