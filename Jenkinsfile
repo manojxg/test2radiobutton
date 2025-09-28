@@ -36,21 +36,21 @@ pipeline {
           def target = params.Deployment_Target
 
           echo "Running environment setup and fun.sh for target: ${target}"
-          sh """
-            #!/bin/bash
-            echo 'Listing S3 buckets...'
-            aws s3 ls
+        //  sh """
+        //    #!/bin/bash
+        //    echo 'Listing S3 buckets...'
+        //    aws s3 ls
 
-            echo 'Sourcing environment script and running fun.sh...'
+        //    echo 'Sourcing environment script and running fun.sh...'
             //chmod +x environment/${target}.sh
             //chmod +x fun.sh
 
           //  source environment/${target}.sh
-            env
-            pwd
-            ls -la
-            ./fun.sh
-          """
+         //   env
+        //    pwd
+        //    ls -la
+       //     ./fun.sh
+       //   """
         }
       }
     }
