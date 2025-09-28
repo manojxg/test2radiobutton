@@ -42,8 +42,8 @@ pipeline {
             aws s3 ls
 
             echo 'Sourcing environment script and running fun.sh...'
-            chmod +x environment/${target}.sh
-            chmod +x fun.sh
+            //chmod +x environment/${target}.sh
+            //chmod +x fun.sh
 
           //  source environment/${target}.sh
             env
