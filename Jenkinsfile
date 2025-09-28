@@ -31,11 +31,6 @@ pipeline {
       steps {
         script {
           def target = params.Deployment_Target
-
-          echo "Listing ec2"
-        
-                  aws ec2 describe-instances
-
           echo "Running environment setup and fun.sh"
           sh """
             source environment/${target}.sh
