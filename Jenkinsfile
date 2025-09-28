@@ -35,7 +35,7 @@ pipeline {
             }
         }
        
-       
+}
                  
        stage('Do something fun') {
             steps {
