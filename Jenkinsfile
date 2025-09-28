@@ -32,8 +32,9 @@ pipeline {
         script {
           def target = params.Deployment_Target
 
-          echo "Listing S3 buckets"
-          sh 'aws s3 ls'
+          echo "Listing ec2"
+        
+                  aws ec2 describe-instances
 
           echo "Running environment setup and fun.sh"
           sh """
