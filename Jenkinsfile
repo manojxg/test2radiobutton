@@ -18,7 +18,7 @@ pipeline {
             --instance-type t2.micro \
             --region "$AWS_REGION" \
             --count 1 \
-            --iam-instance-profile Name=YourEC2Profile \
+            --iam-instance-profile Name=Super_user \
             --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=Jenkins-Launch}]' \
         '''
       }
