@@ -33,7 +33,7 @@ pipeline {
           def target = params.Deployment_Target
           echo "Running environment setup and fun.sh"
           sh """
-            source environment/${target}.sh
+            source .environment/${target}.sh
             env
             pwd
             ls -la
