@@ -36,7 +36,7 @@ pipeline {
           def target = params.Deployment_Target
 
           echo "Running environment setup and fun.sh for target: ${target}"
-        sh '''
+        sh """
         #!/bin/bash
         echo 'Listing S3 buckets...'
         aws s3 ls
@@ -47,7 +47,7 @@ pipeline {
 
         source environment/${target}.sh
         ./fun.sh
-         '''
+         """
         }
       }
     }
