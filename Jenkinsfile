@@ -41,8 +41,8 @@ pipeline {
             steps {
                 script{
                     account_id = utils.get_account_id(params['Deployment Target'])
-                    // withEnv(aws_session.get(account_id, params['Change Number'])) {
-                    withEnv(aws_session.get(account_id, params['Change Number'], "arn:aws:iam::${account_id}:role/tb-ss-jenkins-deployment-common") ){
+                    withEnv(aws_session.get(account_id, params['Change Number'])) {
+                  //  withEnv(aws_session.get(account_id, params['Change Number'], "arn:aws:iam::${account_id}:role/tb-ss-jenkins-deployment-common") ){
                          target = params['Deployment Target']
                        
                     
